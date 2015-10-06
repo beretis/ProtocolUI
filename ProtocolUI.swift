@@ -104,6 +104,8 @@ protocol TransluentTRUE     { }
 protocol CurrentPageTintColor   { var pCurrentPageTintColor     : UIColor  { get } }
 // for the tint color setting is used the TintColor protocol
 
+// UITextField
+protocol BorderStyle { var pBorderStyle     : UITextBorderStyle { get } }
 
 // Customize appearance using closure
 typealias ProtocolUICustomClosure = () -> Void
@@ -323,6 +325,7 @@ extension UITextField {
         if let aSelf = self as? TextColor       { textColor             = aSelf.pTextColor }
         if let aSelf = self as? Font            { font                  = aSelf.pFont }
         if let aSelf = self as? TextAlignment   { textAlignment         = aSelf.pTextAlignment }
+        if let aSelf = self as? BorderStyle     { borderStyle           = aSelf.pBorderStyle }
         
         adjustsFontSizeToFitWidth = self is AdjustFontSizeToFitWidthTRUE
     }
